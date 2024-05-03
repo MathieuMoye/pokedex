@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react';
+import React ,{ useState, useEffect} from 'react';
 import axios from 'axios';
 import './App.css';
 import Header from './components/Header';
@@ -9,7 +9,7 @@ function App() {
 const [pokemons, setPokemons] = useState([])
 
 useEffect(() => {
-  const getAllPokemon = async () => {
+  const getPokemon = async () => {
      const res = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=20&offset=0")
 
      res.data.results.forEach( async  (pokemon) => {
@@ -18,15 +18,16 @@ useEffect(() => {
       setPokemons((p) => [...p, poke.data])
      })
 
-  
   }
-  getAllPokemon()
+  getPokemon()
 }, [])
-
+console.log(pokemons)
   return (
     <>
-    <Header />
-    <CollectionContainer pokemons={pokemons} />
+      <Header />
+      <div className='container'>
+        <CollectionContainer pokemons={pokemons} /> 
+      </div>
     </>
   )
 }
