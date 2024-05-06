@@ -1,4 +1,22 @@
 .list-container {
     border: 1px solid black;
     margin: 2rem 1rem;
+    color: white;
+    text-align: center;
+}
+
+.normal {
+ background-color: #A8A77A;
+}
+
+.fire {
+    background-color: #EE8130;
+}
+
+.water {
+   background-color: #6390f0;
+}
+
+.electric {
+    background-color: #F7D02C;
 }

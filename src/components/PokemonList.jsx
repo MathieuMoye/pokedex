@@ -6,10 +6,10 @@ function PokemonList(props) {
     const { id, name, image, type } = props
   return (
         <section className='list-container'>
-            <p># {id}</p>
-            <p>{name}</p>
+            <p className='list-id'># {id}</p>
+            <p className='list-name'>{name}</p>
             <img src={image} alt={name}/>
-            <p>type: {type}</p>
+            <p className='list-type'>type: {type}</p>
         </section>
   )
 }
